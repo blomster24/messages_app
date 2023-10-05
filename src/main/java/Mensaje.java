@@ -1,3 +1,6 @@
+import java.sql.Timestamp;
+import java.util.Date;
+
 public class Mensaje {
 
     private int id_mensaje;
@@ -6,6 +9,9 @@ public class Mensaje {
     private String fecha_mensaje;
 
     public Mensaje() {
+        Date date = new Date();
+        Timestamp timestamp = new Timestamp(date.getTime());
+        this.fecha_mensaje = timestamp.toString();
     }
 
     public Mensaje(String mensaje, String autor_mensaje, String fecha_mensaje) {
